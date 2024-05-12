@@ -18,8 +18,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="{{ route ('postTable')}}">Post Table</a></li>
       <li><a href=" {{ route ('addPost')}}">Insert Post</a></li>
-      <li><a href=" ">Trashed Posts</a></li>
-      <li><a href="#">Page 3</a></li>
+      <li><a href="{{ route ('TrashedPosts')}} ">Trashed Posts</a></li>
     </ul>
   </div>
 </nav>

@@ -77,9 +77,38 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Post::where('id', $id)->delete();
+        return redirect('postTable');
     }
 
+    /**
+     * show trashed Posts list
+     */
+    public function trashed()
+     {
+        $post=Post::onlyTrashed()->get();
+        return view ('posts.trashedPosts', compact('post'));
+
+     }
+     /**
+      * delete trashed posts
+      */
+
+      public function forcedelete( string $id)
+      {
+        Post::where('id', $id)->forceDelete();
+        return redirect('postTable');
+      }
+
+      /**
+       * retore trashed posts
+       */
+      public function restore(string $id)
+      {
+        Post::where('id', $id)->restore();
+        return redirect('postTable');
+      }
+      
     public function messages(){
         return [
             'title.required'=>'this field is required ',

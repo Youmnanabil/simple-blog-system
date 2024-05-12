@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Posts</title>
+  <title>Deleted Posts</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,15 +12,14 @@
   @include('posts/include/nav')
 
 <div class="container">
-  <h2>Post data</h2>            
+  <h2>Deleted Post data</h2>            
   <table class="table table-striped">
     <thead>
       <tr>
         <th>Title</th>
         <th>Content</th>
-        <th>Show</th>
-        <th>Eidt</th>
-        <th>Delete</th>
+        <th>Restore</th>
+        <th>Force Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -28,9 +27,8 @@
       <tr>
         <td>{{ $row->title}}</td>
         <td> {{ $row->content }}</td>
-        <td><a href="showPost/{{ $row->id }} ">show</a></td>
-        <td><a href=" editPost/{{ $row->id }}">Edit</a></td>
-        <td><a href="deletePost/ {{ $row->id }}" onclick="return confirm ('are you sure you want to delete?')">delete</a></td>
+        <td><a href="RestorePosts/ {{ $row->id }}" onclick="return confirm ('are you sure you want to Restore?')">Restore</a></td>
+       <td><a href="ForceDelete/ {{ $row->id }}" onclick="return confirm ('are you sure you want to delete?')">Delete</a></td>
       </tr>
       @endforeach
     </tbody>

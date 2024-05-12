@@ -28,9 +28,9 @@
       <tr>
         <td>{{ $row->title}}</td>
         <td> {{ $row->content }}</td>
-        <td><a href=" ">Edit</a></td>
+        <td><a href=" editPost/{{ $row->id }}">Edit</a></td>
         <td><a href="showPost/{{ $row->id }} ">show</a></td>
-        <td><a href=" ">delete</a></td>
+        <td><a href="">delete</a></td>
       </tr>
       @endforeach
     </tbody>

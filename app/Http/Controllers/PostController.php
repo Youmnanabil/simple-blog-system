@@ -53,7 +53,8 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.editPost', compact('post'));
     }
 
     /**
@@ -61,7 +62,14 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $message = $this->messages();
+        $data = $request->validate([
+            'title' => 'sometimes|string',
+            'content' => 'sometimes|string',
+        ], $message);
+
+        Post::where('id', $id)->update($data);
+        return redirect('postTable');
     }
 
     /**

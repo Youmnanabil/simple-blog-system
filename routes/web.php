@@ -22,3 +22,5 @@ Route::get('postTable', [PostController::class, 'index'])->name('postTable');
 Route::get('addPost', [PostController::class, 'create'])->name('addPost');
 Route::post('insertPost', [PostController::class, 'store'])->name('insertPost');
 Route::get('showPost/{id}', [PostController::class, 'show'])->name('showPost');
+Route::get('editPost/{id}', [PostController::class, 'edit'])->name('editPost');
+Route::put('updatePost/{id}', [PostController::class, 'update'])->name('updatePost');

@@ -29,8 +29,18 @@
         <td>{{ $row->title}}</td>
         <td> {{ $row->content }}</td>
         <td><a href="showPost/{{ $row->id }} ">show</a></td>
-        <td><a href=" editPost/{{ $row->id }}">Edit</a></td>
-        <td><a href="deletePost/ {{ $row->id }}" onclick="return confirm ('are you sure you want to delete?')">delete</a></td>
+       
+        @can('post-edit')
+        <td>
+          <a href=" editPost/{{ $row->id }}">Edit</a>
+        </td>
+        @endcan
+        
+        @can('post-delete')
+        <td>
+          <a href="deletePost/ {{ $row->id }}" onclick="return confirm ('are you sure you want to delete?')">delete</a>
+        </td>
+        @endcan
       </tr>
       @endforeach
     </tbody>

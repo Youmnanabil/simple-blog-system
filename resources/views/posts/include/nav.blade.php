@@ -19,6 +19,7 @@
       <li class="active"><a href="{{ route ('postTable')}}">Post Table</a></li>
       <li><a href=" {{ route ('addPost')}}">Insert Post</a></li>
       <li><a href="{{ route ('TrashedPosts')}} ">Trashed Posts</a></li>
+      <li><a href="{{ route('users.index')}} ">Users list</a></li>
     </ul>
   </div>
 </nav>

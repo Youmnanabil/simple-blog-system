@@ -108,7 +108,8 @@ class PostController extends Controller
         Post::where('id', $id)->restore();
         return redirect('postTable');
       }
-      
+
+
     public function messages(){
         return [
             'title.required'=>'this field is required ',

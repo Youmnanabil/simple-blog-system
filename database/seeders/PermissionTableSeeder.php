@@ -20,8 +20,6 @@ class PermissionTableSeeder extends Seeder
             'post-edit' ,
             'post-delete' ,
             'post-show',
-            'user-edit',
-            'user-delete',
             'user-create' ,
 
         ];

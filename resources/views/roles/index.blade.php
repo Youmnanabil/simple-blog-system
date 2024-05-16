@@ -32,16 +32,12 @@
                 <td>
                     <form action="{{ route('roles.destroy', $role->id) }}" method="POST">
                         <a class="btn btn-info" href="{{ route('roles.show', $role->id) }}">Show</a>
-                        @can('role-edit')
                             <a class="btn btn-primary" href="{{ route('roles.edit', $role->id) }}">Edit</a>
-                        @endcan
 
 
                         @csrf
                         @method('DELETE')
-                        @can('product-delete')
                             <button type="submit" class="btn btn-danger">Delete</button>
-                        @endcan
                     </form>
                 </td>
             </tr>

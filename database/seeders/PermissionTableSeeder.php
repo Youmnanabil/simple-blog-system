@@ -15,14 +15,20 @@ class PermissionTableSeeder extends Seeder
     {
 
         $Permissions = [
-            'post-edit' => 'Admin',
-            'post-delete' => 'Admin',
-            'user-create' => 'Admin',
+            
+            'post-create',
+            'post-edit' ,
+            'post-delete' ,
+            'post-show',
+            'user-edit',
+            'user-delete',
+            'user-create' ,
 
         ];
 
         foreach($Permissions as $permission){
-            Permission::create(['name' => $permission]);
+            
+            Permission::findOrCreate($permission);
         }
 
     }

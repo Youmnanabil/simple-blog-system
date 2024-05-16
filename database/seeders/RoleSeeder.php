@@ -14,8 +14,8 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         
-        Role::create(['name'=> 'Admin']);
-        Role::create(['name'=> 'User']);
+        Role::findOrCreate('admin');
+        Role::findOrCreate('user');
 
         $role = Role::where('name', 'Admin')->first();
         if (!$role) {

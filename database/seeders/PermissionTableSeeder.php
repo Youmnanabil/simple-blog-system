@@ -15,9 +15,9 @@ class PermissionTableSeeder extends Seeder
     {
 
         $Permissions = [
-            'post-edit',
-            'post-delete',
-            'user-create',
+            'post-edit' => 'Admin',
+            'post-delete' => 'Admin',
+            'user-create' => 'Admin',
 
         ];
 
